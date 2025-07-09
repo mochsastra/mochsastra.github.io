@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -14,6 +15,11 @@
       href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
     <style>
       html {
         scroll-behavior: smooth;
@@ -37,6 +43,9 @@
         background: linear-gradient(180deg, #0d1117, #161b22);
         padding-top: 5rem;
         padding-bottom: 5rem;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
       }
       .btn-outline-primary {
         border-color: #58a6ff;
@@ -75,9 +84,99 @@
       .filter-item {
         transition: all 0.3s ease;
       }
-    </style>
-  </head>
-  <body>
+      .social-icons a {
+        font-size: 1.5rem;
+        transition: color 0.3s;
+      }
+      .social-icons a:hover {
+        color: #00f7ff;
+      }
+
+      /* Animasi Mesh Poligon 3D */
+      #animated-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.shape {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  opacity: 0.8;
+  background-color: transparent;
+  animation: floatDown 10s linear infinite;
+  transform: rotate(0deg);
+  border-radius: 4px;
+  mix-blend-mode: screen;
+}
+
+@keyframes floatDown {
+  0% {
+    transform: translateY(-50px) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+      /* Akhir Animasi Mesh Poligon 3D */
+
+
+/*segitiga 3D */
+    
+/* Akhir segitiga 3D */
+
+
+
+
+
+
+
+
+      .nav-link {
+  position: relative;
+  font-weight: bold;
+  color: #c9d1d9 !important;
+  padding-bottom: 5px;
+  display: inline-block;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 100%;
+  background: linear-gradient(to right, #3b82f6, #60a5fa);
+  border-radius: 2px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.nav-link.active::after {
+  transform: scaleX(1);
+}
+
+.nav-link:hover {
+  color: #58a6ff !important;
+}
+
+</style>
+</head>
+
+
+
+
+<body>
     <!--navbar-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-secondary sticky-top">
       <div class="container">
@@ -113,11 +212,20 @@
     </nav>
     <!--akhir navbar-->
 
+    
+
+
+
+
     <!-- Jumbotron -->
     <section
       class="jumbotron text-center bg-dark text-light"
       style="font-family: 'Source Code Pro', monospace; padding-top: 5rem"
     >
+      <!-- MESH BACKGROUND SVG -->
+      <div id="animated-background"></div>
+      <!--Akhir MESH BACKGROUND SVG -->
+
       <style>
         .glow-border {
           width: 220px;
@@ -129,7 +237,6 @@
           align-items: center;
           margin: 0 auto 1rem auto;
           box-shadow: 0 0 30px #00f7ff;
-          /* HAPUS pseudo-element yang sebelumnya menampilkan 'Profile' */
         }
 
         .glow-border img {
@@ -152,24 +259,74 @@
 
       <h1 class="display-5">Mochammad Sastra Darma Wijaya</h1>
       <p class="tagline">DevOps Enthusiast | QA Engineer | Cloud Beginner</p>
-      <a href="CV.pdf" class="btn btn-outline-primary">Download CV</a>
 
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+      <!-- START SOCIAL MEDIA ICONS -->
+      <div class="social-icons mt-3 mb-4">
+        <a href="https://facebook.com" class="text-light me-3" target="_blank"
+          ><i class="fab fa-facebook"></i
+        ></a>
+        <a href="https://twitter.com" class="text-light me-3" target="_blank"
+          ><i class="fab fa-twitter"></i
+        ></a>
+        <a href="https://instagram.com" class="text-light me-3" target="_blank"
+          ><i class="fab fa-instagram"></i
+        ></a>
+        <a href="https://linkedin.com" class="text-light me-3" target="_blank"
+          ><i class="fab fa-linkedin"></i
+        ></a>
+        <a href="https://github.com" class="text-light me-3" target="_blank"
+          ><i class="fab fa-github"></i
+        ></a>
+        <a href="#" class="text-light" target="_blank"
+          ><i class="fas fa-flag"></i
+        ></a>
+      </div>
+      <!-- END SOCIAL MEDIA ICONS -->
+      <a href="CV.pdf" class="btn btn-outline-primary">Download CV</a>
+    </section>
+    
+    <!--svg-->
+ <div style="margin-bottom: -1rem; position: relative; z-index: 2"></div>
+ <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path
           fill="#161b22"
           fill-opacity="1"
-          d="M0,192L288,160L576,192L864,96L1152,224L1440,192L1440,320L0,320Z"
-        ></path>
-      </svg>
-    </section>
+           d="M0,64L48,80C96,96,192,128,288,128C384,128,480,96,576,96C672,96,768,128,864,117.3C960,107,1056,53,1152,64C1248,75,1344,149,1392,186.7L1440,224L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
+</svg>
+      <!--svg akhir-->
     <!-- Akhir Jumbotron -->
 
     <!-- ABOUT -->
     <section
       id="about"
-      class="py-5 bg-dark text-light"
-      style="font-family: 'Source Code Pro', monospace"
+      class="text-light py-5"
+      style="
+        background-color: #0d1117;
+        font-family: 'Source Code Pro', monospace;
+      "
     >
+
+<!-- POLYGON BACKGROUND BAWAH ABOUT -->
+<div class="polygon-bawah">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
+    <rect width="100%" height="100%" fill="#0d1117"></rect>
+
+    <!-- poligon warna-warni -->
+    <polygon points="0,320 0,160 120,200 200,80 400,160 600,0 900,80 1100,40 1440,160 1440,320" fill="#F9C80E"></polygon>
+    <polygon points="0,320 120,200 400,160 200,300" fill="#F86624"></polygon>
+    <polygon points="200,300 400,160 600,300" fill="#EA3546"></polygon>
+    <polygon points="400,160 600,0 900,80 600,300" fill="#662E9B"></polygon>
+    <polygon points="600,300 900,80 1100,40 900,300" fill="#43BCCD"></polygon>
+    <polygon points="900,300 1100,40 1440,160 1440,320" fill="#3EC300"></polygon>
+  </svg>
+</div>
+<!-- AKHIR POLYGON BACKGROUND -->
+
+
+
+
+  
+   
       <style>
         .section-title {
           display: inline-block;
@@ -187,6 +344,25 @@
           box-shadow: 0 0 8px #00f7ff;
           border-radius: 2px;
         }
+
+       
+.polygon-bawah {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.polygon-bawah svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+
+
+
+
+
       </style>
 
       <div class="container">
@@ -213,157 +389,224 @@
     </section>
     <!-- Akhir ABOUT -->
 
-   <!-- RESUME -->
-<section id="resume" class="bg-dark text-light py-5" style="font-family: 'Source Code Pro', monospace;">
-  <style>
-    .section-title {
-      display: inline-block;
-      position: relative;
+    <!-- RESUME -->
+
+    <section
+      id="resume"
+      class="text-light py-5"
+      style="
+        background-color: #0d1117;
+        font-family: 'Source Code Pro', monospace;
+      "
+    >
+      <style>
+        .section-title {
+          display: inline-block;
+          position: relative;
+        }
+        .section-title::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: -5px;
+          width: 100%;
+          height: 3px;
+          background: #00f7ff;
+          box-shadow: 0 0 8px #00f7ff;
+          border-radius: 2px;
+        }
+      </style>
+
+      <div class="container">
+        <div class="row justify-content-center text-center mb-4">
+          <div class="col">
+            <h2 class="section-title">Resume</h2>
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-center gap-2 mb-4">
+          <button class="btn btn-outline-light active" data-filter="all">
+            All
+          </button>
+          <button class="btn btn-outline-light" data-filter="project">
+            Project
+          </button>
+          <button class="btn btn-outline-light" data-filter="cert">
+            Certifications
+          </button>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+          <div class="col-md-4 filter-item project">
+            <div class="card h-100">
+              <img src="img/wadpad.png" class="card-img-top" alt="wattpad" />
+              <div class="card-body">
+                <p class="card-text">Contoh project Wattpad.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 filter-item project">
+            <div class="card h-100">
+              <img src="img/kopi.png" class="card-img-top" alt="web kopi" />
+              <div class="card-body">
+                <p class="card-text">Contoh website kopi.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 filter-item cert">
+            <div class="card h-100">
+              <img src="img/exel.png" class="card-img-top" alt="excel" />
+              <div class="card-body">
+                <p class="card-text">Sertifikat Excel Dasar.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 filter-item project">
+            <div class="card h-100">
+              <img src="img/flutter.png" class="card-img-top" alt="flutter" />
+              <div class="card-body">
+                <p class="card-text">Aplikasi Flutter sederhana.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 filter-item cert">
+            <div class="card h-100">
+              <img
+                src="img/kopi kenangan.png"
+                class="card-img-top"
+                alt="kopi kenangan"
+              />
+              <div class="card-body">
+                <p class="card-text">Simulasi pemesanan kopi.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- AKHIR RESUME -->
+  
+    <!-- CONTACT ME -->
+     
+    <section
+      id="contact"
+      class="text-light py-5"
+      style="background-color: #161b22"
+    >
+      <style>
+        .section-title {
+          display: inline-block;
+          position: relative;
+        }
+
+        .section-title::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: -5px;
+          width: 100%;
+          height: 3px;
+          background: #00f7ff;
+          box-shadow: 0 0 8px #00f7ff;
+          border-radius: 2px;
+        }
+
+        
+  .btn-gradient {
+    background: linear-gradient(to right, #1976f2, #8e2de2); /* Normal: Biru ke ungu */
+    color: white;
+    border: none;
+    padding: 8px 24px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background 0.5s ease, transform 0.2s;
+  }
+
+  .btn-gradient:hover {
+    background: linear-gradient(to right, #ff416c, #ff4b2b); /* Hover: Pink ke oranye */
+    transform: scale(1.03); /* sedikit membesar saat hover */
+    cursor: pointer;
+  }
+
+      </style>
+
+      <!-- FROM CONTACT ME-->
+
+      <!-- SVG separator overlaps into contact -->
+      <div style="margin-top: -5rem; position: relative; z-index: 2"></div>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path  fill=" #0d1117" fill-opacity="1"
+        d="M0,64L48,80C96,96,192,128,288,128C384,128,480,96,576,96C672,96,768,128,864,117.3C960,107,1056,53,1152,64C1248,75,1344,149,1392,186.7L1440,224L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
+      </svg>
+      <!--akhir SVG-->
+
+     <!-- FORM CONTAK ME -->
+<form
+  action="https://docs.google.com/forms/d/e/1FAIpQLSfyS1cOTKRBrycgieyowGDaWH8F-HNNfODXOV_g3ndS1R7M5w/formResponse"
+  method="POST"
+  target="hidden_iframe"
+  onsubmit="submitted=true"
+>
+
+<div class="container">
+        <div class="row text-center mb-4">
+          <div class="col">
+            <h2 class="section-title">Contact Me</h2>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <form>
+              <div class="mb-3">
+                <label for="fullname" class="form-label">Full name</label>
+                <input
+                  type="text"
+                  class="form-control bg-secondary text-light border-0"
+                  id="fullname"
+                  name="entry.1936643944"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email address</label>
+                 <input
+                  type="email"
+                  class="form-control bg-secondary text-light border-0"
+                  id="email"
+                  name="entry.1635155502"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label">Leave a message</label>
+                 <textarea
+                  class="form-control bg-secondary text-light border-0"
+                  id="message"
+                  name="entry.1045781291"
+                  rows="3"
+                  required
+                ></textarea>
+              </div>
+        <!-- Tombol Submit dengan gradasi dinamis -->
+        <button type="submit" class="btn-gradient">Submit</button>
+      </form>
+      <iframe name="hidden_iframe" style="display:none;"></iframe>
+      <script>
+  let submitted = false;
+  document.querySelector("iframe[name='hidden_iframe']").addEventListener('load', function () {
+    if (submitted) {
+      alert('Pesan berhasil dikirim! 😊');
+      document.getElementById('fullname').value = '';
+      document.getElementById('email').value = '';
+      document.getElementById('message').value = '';
+      submitted = false;
     }
-
-    .section-title::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -5px;
-      width: 100%;
-      height: 3px;
-      background: #00f7ff;
-      box-shadow: 0 0 8px #00f7ff;
-      border-radius: 2px;
-    }
-  </style>
-
-  <div class="container">
-    <div class="row justify-content-center text-center mb-4">
-      <div class="col">
-        <h2 class="section-title">Resume</h2>
-      </div>
+      });
+</script>
     </div>
-
-    <div class="d-flex justify-content-center gap-2 mb-4">
-      <button class="btn btn-outline-light active" data-filter="all">All</button>
-      <button class="btn btn-outline-light" data-filter="project">Project</button>
-      <button class="btn btn-outline-light" data-filter="cert">Certifications</button>
-    </div>
-
-    <div class="row g-4 justify-content-center">
-      <div class="col-md-4 filter-item project">
-        <div class="card h-100">
-          <img src="img/wadpad.png" class="card-img-top" alt="wattpad" />
-          <div class="card-body">
-            <p class="card-text">Contoh project Wattpad.</p>
-          </div>
-        </div>
       </div>
-      <div class="col-md-4 filter-item project">
-        <div class="card h-100">
-          <img src="img/kopi.png" class="card-img-top" alt="web kopi" />
-          <div class="card-body">
-            <p class="card-text">Contoh website kopi.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 filter-item cert">
-        <div class="card h-100">
-          <img src="img/exel.png" class="card-img-top" alt="excel" />
-          <div class="card-body">
-            <p class="card-text">Sertifikat Excel Dasar.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 filter-item project">
-        <div class="card h-100">
-          <img src="img/flutter.png" class="card-img-top" alt="flutter" />
-          <div class="card-body">
-            <p class="card-text">Aplikasi Flutter sederhana.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 filter-item cert">
-        <div class="card h-100">
-          <img src="img/kopi kenangan.png" class="card-img-top" alt="kopi kenangan" />
-          <div class="card-body">
-            <p class="card-text">Simulasi pemesanan kopi.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-    <!-- CONTACT -->
-<section id="contact" class="bg-dark text-light py-5">
-  <style>
-    .section-title {
-      display: inline-block;
-      position: relative;
-    }
-
-    .section-title::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -5px;
-      width: 100%;
-      height: 3px;
-      background: #00f7ff;
-      box-shadow: 0 0 8px #00f7ff;
-      border-radius: 2px;
-    }
-  </style>
-
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-    <path
-      fill="#273036"
-      fill-opacity="1"
-      d="M0,0L360,96L720,96L1080,32L1440,160L1440,320L0,320Z"
-    ></path>
-  </svg>
-
-  <div class="container">
-    <div class="row text-center mb-4">
-      <div class="col">
-        <h2 class="section-title">Contact Me</h2>
-      </div>
-    </div>
-
-    <div class="row justify-content-center">
-      <div class="col-md-8">
-        <form>
-          <div class="mb-3">
-            <label for="email" class="form-label">Email address</label>
-            <input
-              type="email"
-              class="form-control bg-secondary text-light border-0"
-              id="email"
-            />
-          </div>
-          <div class="mb-3">
-            <label for="password" class="form-label">Password</label>
-            <input
-              type="password"
-              class="form-control bg-secondary text-light border-0"
-              id="password"
-            />
-          </div>
-          <div class="mb-3">
-            <label for="message" class="form-label">Leave a message</label>
-            <textarea
-              class="form-control bg-secondary text-light border-0"
-              id="message"
-              rows="3"
-            ></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- Akhir CONTACT -->
-
-
+    </section>
+    <!-- Akhir CONTACT --> 
     <!--Footer-->
     <footer
       class="bg-dark text-light text-center p-3"
@@ -375,7 +618,7 @@
           href="https://www.wattpad.com/user/mochsastra"
           style="color: #00f7ff; text-decoration: none"
           >Mochsastra</a
-        >. Create by Moch Sastra</a>
+        >. Create by Moch Sastra
       </p>
     </footer>
     <!--Akhir Footer-->
@@ -400,9 +643,66 @@
               item.classList.contains(btn.dataset.filter)
                 ? "block"
                 : "none";
+            ("block");
+            ("none");
           });
         });
       });
     </script>
+
+  <script>
+  const sections = document.querySelectorAll("section[id]");
+  const navLinks = document.querySelectorAll(".nav-link");
+
+  window.addEventListener("scroll", () => {
+    let current = "";
+
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop - 80;
+      const sectionHeight = section.offsetHeight;
+
+      if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+        current = section.getAttribute("id");
+      }
+    });
+
+    navLinks.forEach((link) => {
+      link.classList.remove("active");
+      if (link.getAttribute("href") === `#${current}`) {
+        link.classList.add("active");
+      }
+    });
+  });
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      navLinks.forEach((l) => l.classList.remove("active"));
+      link.classList.add("active");
+    });
+  });
+</script>
+
+
+
+  <script>
+  const background = document.getElementById("animated-background");
+  const colors = ["#00f7ff", "#3b82f6", "#f59e0b", "#ef4444", "#10b981", "#a855f7"];
+
+  for (let i = 0; i < 30; i++) {
+    const shape = document.createElement("div");
+    shape.classList.add("shape");
+    const size = Math.random() * 20 + 10;
+    shape.style.width = `${size}px`;
+    shape.style.height = `${size}px`;
+    shape.style.left = `${Math.random() * 100}%`;
+    shape.style.top = `${-Math.random() * 100}px`;
+    shape.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+    shape.style.animationDuration = `${6 + Math.random() * 6}s`;
+    shape.style.animationDelay = `${Math.random() * 5}s`;
+    shape.style.borderRadius = Math.random() > 0.5 ? "0%" : "50%";
+    background.appendChild(shape);
+  }
+</script>
+</script>
   </body>
 </html>
