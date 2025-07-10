@@ -20,7 +20,10 @@
     />
 
     <style>
-      html,
+      /* pembungkus */
+       html {
+        scroll-behavior: smooth;
+       }
       body {
         height: 100%;
         margin: 0;
@@ -33,6 +36,7 @@
       .wrapper > main {
         flex: 1;
       }
+/* akhir pembungkus wrapper */
 
       body {
         font-family: "Fira Code", monospace;
@@ -101,7 +105,7 @@
       .social-icons a:hover {
         color: #00f7ff;
       }
-
+ /* Animasi Mesh Poligon 3D */
       #animated-background {
         position: absolute;
         top: 0;
@@ -112,6 +116,7 @@
         z-index: 0;
         pointer-events: none;
       }
+
       .shape {
         position: absolute;
         width: 30px;
@@ -133,6 +138,7 @@
           opacity: 0;
         }
       }
+      /* Akhir Animasi Mesh Poligon 3D */
 
       .nav-link {
         position: relative;
@@ -312,7 +318,7 @@
           </div>
           <a href="CV.pdf" class="btn btn-outline-primary">Download CV</a>
         </section>
-
+ <!--svg-->
         <div style="margin-bottom: -1rem; position: relative; z-index: 2"></div>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
           <path
@@ -321,7 +327,8 @@
             d="M0,64L48,80C96,96,192,128,288,128C384,128,480,96,576,96C672,96,768,128,864,117.3C960,107,1056,53,1152,64C1248,75,1344,149,1392,186.7L1440,224L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
           ></path>
         </svg>
-
+<!--svg akhir-->
+<!-- Akhir Jumbotron -->
         <!-- ABOUT -->
         <section
           id="about"
@@ -331,6 +338,8 @@
             font-family: 'Source Code Pro', monospace;
           "
         >
+
+        <!-- POLYGON BACKGROUND BAWAH ABOUT -->
           <div class="polygon-bawah">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -364,6 +373,42 @@
               ></polygon>
             </svg>
           </div>
+          <!-- AKHIR POLYGON BACKGROUND -->
+
+<!-- garis bawah scrol-->
+
+<style>
+        .section-title {
+          display: inline-block;
+          position: relative;
+        }
+
+        .section-title::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: -5px;
+          width: 100%;
+          height: 3px;
+          background: #00f7ff;
+          box-shadow: 0 0 8px #00f7ff;
+          border-radius: 2px;
+        }
+.polygon-bawah {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.polygon-bawah svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+</style>
+
+<!-- garis bawah scrol-->
+
           <div class="container">
             <div class="row text-center mb-4">
               <div class="col">
@@ -387,6 +432,7 @@
             </div>
           </div>
         </section>
+        <!-- Akhir ABOUT -->
 
         <!-- RESUME -->
         <section
@@ -397,6 +443,26 @@
             font-family: 'Source Code Pro', monospace;
           "
         >
+        <!-- garis bawah scrol-->
+<style>
+        .section-title {
+          display: inline-block;
+          position: relative;
+        }
+        .section-title::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: -5px;
+          width: 100%;
+          height: 3px;
+          background: #00f7ff;
+          box-shadow: 0 0 8px #00f7ff;
+          border-radius: 2px;
+        }
+      </style>
+      <!-- Akhir garis bawah scrol-->
+
           <div class="container">
             <div class="row justify-content-center text-center mb-4">
               <div class="col">
@@ -470,13 +536,55 @@
             </div>
           </div>
         </section>
+        <!-- AKHIR RESUME -->
 
-        <!-- CONTACT -->
+        <!-- CONTACT ME -->
         <section
           id="contact"
           class="text-light py-5"
           style="background-color: #161b22"
         >
+        <!-- garis bawah scrol-->
+<style>
+        .section-title {
+          display: inline-block;
+          position: relative;
+        }
+
+        .section-title::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: -5px;
+          width: 100%;
+          height: 3px;
+          background: #00f7ff;
+          box-shadow: 0 0 8px #00f7ff;
+          border-radius: 2px;
+        }
+        .btn-gradient {
+    background: linear-gradient(to right, #1976f2, #8e2de2); /* Normal: Biru ke ungu */
+    color: white;
+    border: none;
+    padding: 8px 24px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background 0.5s ease, transform 0.2s;
+  }
+
+  .btn-gradient:hover {
+    background: linear-gradient(to right, #ff416c, #ff4b2b); /* Hover: Pink ke oranye */
+    transform: scale(1.03); /* sedikit membesar saat hover */
+    cursor: pointer;
+  }
+
+      </style>
+      <!-- Akhir garis bawah scrol-->
+
+
+<!-- FROM CONTACT ME-->
+
+ <!-- SVG separator overlaps into contact -->
           <div style="margin-top: -5rem; position: relative; z-index: 2"></div>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
             <path
@@ -485,8 +593,10 @@
               d="M0,64L48,80C96,96,192,128,288,128C384,128,480,96,576,96C672,96,768,128,864,117.3C960,107,1056,53,1152,64C1248,75,1344,149,1392,186.7L1440,224L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
             ></path>
           </svg>
+          <!--akhir SVG-->
+
           <form
-            action="https://docs.google.com/forms/d/e/1FAIpQLSfyS1cOTKRBrycgieyowGDaWH8F-HNNfODXOV_g3ndS1R7M5w/viewform?usp=header/formResponse"
+            action="https://docs.google.com/forms/d/e/1FAIpQLSfyS1cOTKRBrycgieyowGDaWH8F-HNNfODXOV_g3ndS1R7M5w/formResponse"
             method="POST"
             target="hidden_iframe"
             onsubmit="submitted=true"
@@ -505,34 +615,34 @@
                       type="text"
                       class="form-control bg-secondary text-light border-0"
                       id="fullname"
-                      name="entry.1936643944"
+                      name="entry.2005620554"
                       required
                     />
                   </div>
                   <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
+                    <label for="email" class="form-label">Email address</label>
                     <input
                       type="email"
                       class="form-control bg-secondary text-light border-0"
                       id="email"
-                      name="entry.1298690573"
+                      name="entry.1045781291"
                       required
                     />
                   </div>
                   <div class="mb-3">
-                    <label for="message" class="form-label">Message</label>
+                    <label for="message" class="form-label">Message address</label>
                     <textarea
                       class="form-control bg-secondary text-light border-0"
                       id="message"
-                      name="entry.1198164086"
+                      name="entry.839337160"
                       rows="3"
                       required
                     ></textarea>
                   </div>
+                  <!-- Tombol Submit dengan gradasi dinamis -->
                   <button type="submit" class="btn btn-gradient">Submit</button>
                 </div>
-              </div>
-            </div>
+    
           </form>
           <iframe
             name="hidden_iframe"
@@ -543,18 +653,29 @@
       </main>
 
       <!-- FOOTER -->
-      <footer class="text-center text-light py-3 mt-auto">
-        <p>&copy; 2025 Mochammad Sastra Darma Wijaya. All rights reserved.</p>
+      <footer class="text-center text-light py-3"
+        style="font-family: 'Source Code Pro', monospace"
+        >
+        <p class="mb-0">
+          &copy; 2025
+          <a
+            href="https://www.wattpad.com/user/mochsastra"
+            style="color: #00f7ff; text-decoration: none"
+            >Mochammad Sastra Darma Wijaya</a
+          >. All rights reserved.
+        </p>
       </footer>
+      <!--Akhir Footer-->
     </div>
-
+<!-- Bootstrap Script -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YudCj6t/CE0UnzvIY6Vv5X4+Yv2pJ1/fGzF7h8yAa7G3RPTM4QH7wL6P1elKBkZl"
       crossorigin="anonymous"
     ></script>
     <script>
-      // FILTER RESUME ITEMS
+
+      // FILTER RESUME ITEMS <!-- JS Filter Portfolio -->
       document.querySelectorAll("[data-filter]").forEach((button) => {
         button.addEventListener("click", () => {
           document
@@ -570,17 +691,72 @@
           });
         });
       });
+</script>
 
-      // ANIMATED BACKGROUND SHAPES
-      const animatedBackground = document.getElementById("animated-background");
-      for (let i = 0; i < 30; i++) {
-        const shape = document.createElement("div");
-        shape.classList.add("shape");
-        shape.style.left = `${Math.random() * 100}%`;
-        shape.style.animationDuration = `${5 + Math.random() * 10}s`;
-        shape.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
-        animatedBackground.appendChild(shape);
+<script>
+  const sections = document.querySelectorAll("section[id]");
+  const navLinks = document.querySelectorAll(".nav-link");
+
+  window.addEventListener("scroll", () => {
+    let current = "";
+
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop - 80;
+      const sectionHeight = section.offsetHeight;
+
+      if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+        current = section.getAttribute("id");
       }
-    </script>
+    });
+navLinks.forEach((link) => {
+      link.classList.remove("active");
+      if (link.getAttribute("href") === `#${current}`) {
+        link.classList.add("active");
+      }
+    });
+  });
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      navLinks.forEach((l) => l.classList.remove("active"));
+      link.classList.add("active");
+    });
+  });
+</script>
+<!--akhir scrol-->
+
+
+<script>
+  const background = document.getElementById("animated-background");
+  const colors = ["#00f7ff", "#3b82f6", "#f59e0b", "#ef4444", "#10b981", "#a855f7"];
+
+  for (let i = 0; i < 30; i++) {
+    const shape = document.createElement("div");
+    shape.classList.add("shape");
+    const size = Math.random() * 20 + 10;
+    shape.style.width = `${size}px`;
+    shape.style.height = `${size}px`;
+    shape.style.left = `${Math.random() * 100}%`;
+    shape.style.top = `${-Math.random() * 100}px`;
+    shape.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+    shape.style.animationDuration = `${6 + Math.random() * 6}s`;
+    shape.style.animationDelay = `${Math.random() * 5}s`;
+    shape.style.borderRadius = Math.random() > 0.5 ? "0%" : "50%";
+    background.appendChild(shape);
+  }
+
+document.querySelector("iframe[name='hidden_iframe']").addEventListener("load", function () {
+    if (submitted) {
+      alert("Pesan berhasil dikirim! 😊");
+      document.getElementById("fullname").value = "";
+      document.getElementById("email").value = "";
+      document.getElementById("message").value = "";
+      submitted = false;
+    }
+  });
+</script>
+  
+
+</script>
   </body>
 </html>
